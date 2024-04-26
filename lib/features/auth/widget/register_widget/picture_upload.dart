@@ -13,7 +13,6 @@ class PictureUpload extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height / 13,
           decoration: BoxDecoration(
-              color: const Color(0xffDDDDDD),
               borderRadius: BorderRadius.circular(4),
               border: Border.all(color: AppColor.kFontGray)),
           child: const Row(

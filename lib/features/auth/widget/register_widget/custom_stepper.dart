@@ -27,7 +27,7 @@ class CustomSteppers extends StatelessWidget {
             lineType: LineType.normal,
           ),
           stepShape: StepShape.rRectangle,
-          stepBorderRadius: 50,
+          stepBorderRadius: 4,
           borderThickness: 2,
           padding: const EdgeInsets.all(20),
           stepRadius: 28,

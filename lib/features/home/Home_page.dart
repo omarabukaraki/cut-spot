@@ -1,6 +1,9 @@
 import 'package:cut_spot/core/utils/app_color.dart';
 import 'package:cut_spot/features/auth/widget/login_register_widget/custom_lr_button.dart';
 import 'package:flutter/material.dart';
+import '../select_time/select_time_page.dart';
+import 'widget/custom_services_component.dart';
+import 'widget/description_home_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -75,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 4,
                 child: GridView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4),
                   itemCount: iconServices.length,
@@ -122,7 +125,14 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-              const CustomLRButton(
+              CustomLRButton(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return const SelectTimePage();
+                    },
+                  ));
+                },
                 isDark: true,
                 buttonLabel: 'Next',
                 paddingVertical: 24,
@@ -136,72 +146,74 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class CustomServicesComponent extends StatelessWidget {
-  const CustomServicesComponent(
-      {super.key, this.image, this.title, this.height, this.width});
-  final String? image;
-  final String? title;
-  final double? width;
-  final double? height;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: height,
-      decoration: BoxDecoration(
-        border: Border.all(color: AppColor.kFontGray, width: 0.5),
-        color: AppColor.kWGray,
-      ),
-      margin: const EdgeInsets.all(4),
-      child: Column(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Image.asset(image ?? 'assets/images/salon.png'),
-            ),
-          ),
-          Text(
-            title ?? 'Hair cu',
-            style: const TextStyle(color: AppColor.kPrimary, fontSize: 12),
-          )
-        ],
-      ),
-    );
-  }
-}
+// displayTimeSlot(context, BarberModel())
 
-class DescriptionHomePage extends StatelessWidget {
-  const DescriptionHomePage({
-    super.key,
-  });
+// displayTimeSlot(BuildContext context, BarberModel barberModel) {
+//   DateTime now = DateTime.now();
+//   // DateTime times = DateTime.now();
+//   // DateTime dateWatch = DateTime.now();
+//   DateFormat dateFormat = DateFormat.MMMM();
+//   String formattedDate = dateFormat.format(now);
 
-  @override
-  Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
-      child: Text(
-        'Choose the service you want',
-        style: TextStyle(color: AppColor.kFontGray, height: 1, fontSize: 12),
-      ),
-    );
-  }
-}
+//   return Column(
+//     children: [
+//       Container(
+//         color: Colors.red,
+//         child: Row(
+//           crossAxisAlignment: CrossAxisAlignment.center,
+//           children: [
+//             Expanded(
+//                 child: Center(
+//               child: Padding(
+//                 padding: const EdgeInsets.all(12),
+//                 child: Column(
+//                   children: [
+//                     Text(
+//                       formattedDate,
+//                       style: const TextStyle(),
+//                     ),
+//                     Text(
+//                       now.day.toString(),
+//                       style: const TextStyle(
+//                           fontWeight: FontWeight.bold, fontSize: 18),
+//                     ),
+//                     Text(
+//                       DateFormat.EEEE().format(now),
+//                       style: const TextStyle(),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             )),
+//             GestureDetector(
+//               onTap: () {
+//                 DatePicker.showDatePicker(
+//                   context,
+//                   showTitleActions: true,
+//                   minTime: now,
+//                   maxTime: now.add(const Duration(days: 31)),
+//                   onConfirm: (time) {
+//                     print(time.toString());
+//                     // times = time;
+//                   },
+//                 );
+//               },
+//               child: const Padding(
+//                 padding: EdgeInsets.all(8),
+//                 child: Align(
+//                   alignment: Alignment.centerRight,
+//                   child: Icon(
+//                     Icons.calendar_today,
+//                     color: Colors.white,
+//                   ),
+//                 ),
+//               ),
+//             )
+//           ],
+//         ),
+//       )
+//     ],
+//   );
+// }
 
-class HeaderTextHome extends StatelessWidget {
-  const HeaderTextHome({super.key, this.text});
-
-  final String? text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
-      child: Text(text ?? 'Welcome to Cut Spot Salon!',
-          style: const TextStyle(
-              color: AppColor.kPrimary,
-              fontWeight: FontWeight.bold,
-              fontSize: 14)),
-    );
-  }
-}
+class BarberModel {}

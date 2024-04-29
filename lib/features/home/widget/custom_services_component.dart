@@ -16,7 +16,7 @@ class CustomServicesComponent extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
         border: Border.all(color: AppColor.kFontGray, width: 0.5),
-        color: AppColor.kWGray,
+        // color: AppColor.kWGray,
       ),
       margin: const EdgeInsets.all(4),
       child: Column(

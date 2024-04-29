@@ -16,7 +16,7 @@ class AvailableTimeComponent extends StatelessWidget {
         ? Container(
             margin: const EdgeInsets.all(4),
             decoration: BoxDecoration(
-                color: AppColor.kWGray,
+                // color: AppColor.kWGray,
                 borderRadius: BorderRadius.circular(4),
                 border: Border.all(color: AppColor.kFontGray)),
             child: Center(

@@ -94,19 +94,21 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 8,
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CustomServicesComponent(
-                      image: 'assets/images/home.png',
-                      title: 'At home',
-                      width: MediaQuery.of(context).size.width / 2.3,
+                    Expanded(
+                      child: CustomServicesComponent(
+                        image: 'assets/images/home.png',
+                        title: 'At home',
+                      ),
                     ),
-                    CustomServicesComponent(
-                      title: 'In the saloon',
-                      image: 'assets/images/hair-salon.png',
-                      width: MediaQuery.of(context).size.width / 2.3,
-                    ),
+                    Expanded(
+                      child: CustomServicesComponent(
+                        title: 'In the saloon',
+                        image: 'assets/images/hair-salon.png',
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -145,75 +147,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-// displayTimeSlot(context, BarberModel())
-
-// displayTimeSlot(BuildContext context, BarberModel barberModel) {
-//   DateTime now = DateTime.now();
-//   // DateTime times = DateTime.now();
-//   // DateTime dateWatch = DateTime.now();
-//   DateFormat dateFormat = DateFormat.MMMM();
-//   String formattedDate = dateFormat.format(now);
-
-//   return Column(
-//     children: [
-//       Container(
-//         color: Colors.red,
-//         child: Row(
-//           crossAxisAlignment: CrossAxisAlignment.center,
-//           children: [
-//             Expanded(
-//                 child: Center(
-//               child: Padding(
-//                 padding: const EdgeInsets.all(12),
-//                 child: Column(
-//                   children: [
-//                     Text(
-//                       formattedDate,
-//                       style: const TextStyle(),
-//                     ),
-//                     Text(
-//                       now.day.toString(),
-//                       style: const TextStyle(
-//                           fontWeight: FontWeight.bold, fontSize: 18),
-//                     ),
-//                     Text(
-//                       DateFormat.EEEE().format(now),
-//                       style: const TextStyle(),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//             )),
-//             GestureDetector(
-//               onTap: () {
-//                 DatePicker.showDatePicker(
-//                   context,
-//                   showTitleActions: true,
-//                   minTime: now,
-//                   maxTime: now.add(const Duration(days: 31)),
-//                   onConfirm: (time) {
-//                     print(time.toString());
-//                     // times = time;
-//                   },
-//                 );
-//               },
-//               child: const Padding(
-//                 padding: EdgeInsets.all(8),
-//                 child: Align(
-//                   alignment: Alignment.centerRight,
-//                   child: Icon(
-//                     Icons.calendar_today,
-//                     color: Colors.white,
-//                   ),
-//                 ),
-//               ),
-//             )
-//           ],
-//         ),
-//       )
-//     ],
-//   );
-// }
 
 class BarberModel {}

@@ -28,7 +28,7 @@ class _DisplayTimeSlotState extends State<DisplayTimeSlot> {
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           decoration: BoxDecoration(
-              color: AppColor.kWGray,
+              // color: AppColor.kWGray,
               borderRadius: BorderRadius.circular(4),
               border: Border.all(
                 color: AppColor.kFontGray,

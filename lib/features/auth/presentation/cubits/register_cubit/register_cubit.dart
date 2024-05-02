@@ -21,9 +21,9 @@ class RegisterCubit extends Cubit<RegisterState> {
       emit(RegisterSuccess());
       await users.doc(FirebaseAuth.instance.currentUser!.uid).set({
         'id': FirebaseAuth.instance.currentUser!.uid,
-        'name': name,
-        'email': email,
-        'phoneNumber': phoneNumber,
+        'name': name.trim(),
+        'email': email.trim(),
+        'phoneNumber': phoneNumber.trim(),
         'image': image
       });
     } on FirebaseAuthException catch (e) {

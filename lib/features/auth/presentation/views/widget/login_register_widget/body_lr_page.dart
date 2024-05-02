@@ -20,14 +20,17 @@ class BodyLRPage extends StatelessWidget {
         SizedBox(
           height: MediaQuery.of(context).size.height / 24,
         ),
-        const Text(
-          'Book your haircut in seconds',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              color: AppColor.kPrimary,
-              fontWeight: FontWeight.bold,
-              height: 1,
-              fontSize: 30),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          child: Text(
+            'Book your haircut in seconds',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: AppColor.kPrimary,
+                fontWeight: FontWeight.bold,
+                height: 1,
+                fontSize: 30),
+          ),
         ),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),

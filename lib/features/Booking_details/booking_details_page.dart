@@ -1,5 +1,5 @@
 import 'package:cut_spot/core/utils/app_color.dart';
-import 'package:cut_spot/features/auth/widget/login_register_widget/custom_lr_button.dart';
+import 'package:cut_spot/features/auth/presentation/views/widget/login_register_widget/custom_lr_button.dart';
 import 'package:flutter/material.dart';
 import 'widget/custom_invoice.dart';
 import 'widget/payment_component.dart';

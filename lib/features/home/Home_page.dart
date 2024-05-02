@@ -1,5 +1,5 @@
 import 'package:cut_spot/core/utils/app_color.dart';
-import 'package:cut_spot/features/auth/widget/login_register_widget/custom_lr_button.dart';
+import 'package:cut_spot/features/auth/presentation/views/widget/login_register_widget/custom_lr_button.dart';
 import 'package:flutter/material.dart';
 import '../select_time/select_time_page.dart';
 import 'widget/custom_services_component.dart';
@@ -147,5 +147,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-class BarberModel {}

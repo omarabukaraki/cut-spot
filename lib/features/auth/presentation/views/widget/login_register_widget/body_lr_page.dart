@@ -1,6 +1,6 @@
 import 'package:cut_spot/core/utils/app_color.dart';
-import 'package:cut_spot/features/auth/login_page.dart';
-import 'package:cut_spot/features/auth/register_page.dart';
+import 'package:cut_spot/features/auth/presentation/views/login_page.dart';
+import 'package:cut_spot/features/auth/presentation/views/register_page.dart';
 import 'package:flutter/material.dart';
 import 'custom_lr_button.dart';
 

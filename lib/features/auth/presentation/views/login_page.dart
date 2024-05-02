@@ -1,8 +1,8 @@
 import 'package:cut_spot/core/widget/custom_text_feild.dart';
-import 'package:cut_spot/features/auth/register_page.dart';
-import 'package:cut_spot/features/auth/widget/login_register_widget/custom_lr_button.dart';
+import 'package:cut_spot/features/auth/presentation/views/register_page.dart';
+import 'package:cut_spot/features/auth/presentation/views/widget/login_register_widget/custom_lr_button.dart';
 import 'package:flutter/material.dart';
-import '../home/Home_page.dart';
+import '../../../home/Home_page.dart';
 import 'widget/login_widget/donet_have_account_button.dart';
 import 'widget/login_widget/forget_password_btn.dart';
 import 'widget/login_widget/logo_component.dart';

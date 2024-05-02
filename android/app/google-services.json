@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "573288688833",
+    "project_id": "cut-spot1",
+    "storage_bucket": "cut-spot1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573288688833:android:7c6427965003a4e1bef840",
+        "android_client_info": {
+          "package_name": "com.example.cut_spot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuiw6__49xqRCOyC8QrPtajsHYQRPqBVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

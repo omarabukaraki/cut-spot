@@ -18,17 +18,14 @@ class RegisterCubit extends Cubit<RegisterState> {
     try {
       await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
-      if (FirebaseAuth.instance.currentUser!.emailVerified == false) {
-        FirebaseAuth.instance.currentUser!.sendEmailVerification();
-        emit(RegisterSuccess());
-        await users.doc(FirebaseAuth.instance.currentUser!.uid).set({
-          'id': FirebaseAuth.instance.currentUser!.uid,
-          'name': name,
-          'email': email,
-          'phoneNumber': phoneNumber,
-          'image': image
-        });
-      }
+      emit(RegisterSuccess());
+      await users.doc(FirebaseAuth.instance.currentUser!.uid).set({
+        'id': FirebaseAuth.instance.currentUser!.uid,
+        'name': name,
+        'email': email,
+        'phoneNumber': phoneNumber,
+        'image': image
+      });
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         emit(RegisterFailure(errMassage: 'Password is too weak'));

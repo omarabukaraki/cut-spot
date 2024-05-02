@@ -88,9 +88,11 @@ class _RegisterPageState extends State<RegisterPage> {
                       listener: (context, state) {
                         if (state is RegisterSuccess) {
                           clearText();
+                          activeStep = 0;
+                          imageUrl = '';
                           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                               content: Text(
-                                  "A verification message has been sent to your email")));
+                                  "Your email has been created, you can now log in")));
                         } else if (state is RegisterFailure) {
                           ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text(state.errMassage)));
@@ -165,8 +167,6 @@ class _RegisterPageState extends State<RegisterPage> {
                                       BlocProvider.of<AddImagesCubit>(context)
                                           .url = [];
                                       setState(() {
-                                        activeStep = 0;
-                                        imageUrl = '';
                                         isSelect = false;
                                         isLoading = false;
                                       });
